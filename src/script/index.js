@@ -80,38 +80,41 @@
     let $liwidth = $images.eq(0).width();
     $lunbo_ul.width(($images.length + 2) * $liwidth);
 
-    $tabs.hover(function(){
+    $tabs.hover(function () {
         $(this).addClass('cur').siblings().removeClass('cur');
         let num = $(this).index();
+        // clearInterval(timer);
         // console.log($(this).index());
-        $lunbo_ul.css('left',-$liwidth * ($(this).index() + 1));
+        $lunbo_ul.css('left', -$liwidth * ($(this).index() + 1));
         // return num;
-    },function(){
+    }, function () {
         // 鼠标移出自动播放
         //自动播放
-        
-    }) 
+
+    })
     // console.log(num);
-    let timer = setInterval(function(){
+
+    let timer = setInterval(function () {
         num++;
-        if(num === $images.length){
+        if (num === $images.length) {
             $tabs.eq(0).addClass('cur').siblings().removeClass('cur');
-        }else{
+        } else {
             $tabs.eq(num).addClass('cur').siblings().removeClass('cur');
         }
         $lunbo_ul.animate({
-            left:-(num+1) * $liwidth
-        },100,function(){
-            if(num === $images.length){
-                $lunbo_ul.css('left',-$liwidth);
+            left: -(num + 1) * $liwidth
+        }, 100, function () {
+            if (num === $images.length) {
+                $lunbo_ul.css('left', -$liwidth);
                 num = 0;
             }
         })
-    },2000)
-   
+    }, 2000)
+
 }()
 
-;!function(){
+;
+! function () {
     //数据库的渲染
     let $lists = $('#floor_knowU .under_sp_list');
     $.ajax({
@@ -121,7 +124,7 @@
         success: function (response) {
             // console.log(response);
             let str = '';
-            for(let i = 0 ; i <response.length; i++ ){
+            for (let i = 0; i < response.length; i++) {
                 str = `
                 <li class="under_list_single">
                     <div class="under_pro_pic">
@@ -132,9 +135,9 @@
                     <div class="pro_tag clearfix">
                     </div>
                     <div class="sing_btn_con">
-                        <div class="sin_hove_btn sin_gw">
-                            <a class="sin_hove_btn_a item-cart">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <div class="sin_hove_btn sin_gw" style="">
+                            <a class="sin_hove_btn_a item-cart" >
+                                <i class="glyphicon glyphicon-shopping-cart" style="left:-14px"></i>
                             </a>
                         </div>
                         <div class="sin_hove_btn sin_xs">
@@ -146,7 +149,51 @@
                 `;
                 $lists[0].innerHTML += str;
             }
-            
+
         }
     });
+}()
+
+// cookie切换头部
+const global_unlogin = $('#global_unlogin');
+const global_login = $('#global_login');
+if (getcookie('cookiename')) {
+    var n = getcookie('cookiename');
+    // console.log(n);
+    // alert(n);
+    global_unlogin.hide();
+    global_login.show();
+    global_login.find('.hd_hi')[0].innerHTML += n;
+}
+
+//  懒加载
+$(window).on('scroll', function () {
+    let $imgtop=$('img').offset().top;
+    let $scrolltop=$(window).scrollTop();
+    let $clientheight=$(window).height();
+    if($imgtop<$scrolltop+$clientheight){
+        $("img.lazy").lazyload({
+            effect: "fadeIn" //图片显示方式
+        });
+    }
+});
+
+//数据库加载图片效果
+
+// 鼠标悬停出现.sin_gw和.item-cart 
+
+;!function(){
+    // const sin_gw = $('.sin_gw');
+    // const item = $('.item-cart');
+    const under_sp_list = $('.under_sp_list');
+
+    under_sp_list.on('mouseover','li',function(){ //事件委托
+        $(this).css('border','1px solid #ff4040');
+        $(this).find('.sing_btn_con').css('opacity','1');
+    })
+
+    under_sp_list.on('mouseout','li',function(){
+        $(this).css('border','none');
+        $(this).find('.sing_btn_con').css('opacity','0');
+    })
 }()

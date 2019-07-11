@@ -13,7 +13,7 @@ $result = $conn->query($mysql);
 if( $result->num_rows > 0 ) {
    die('{"msg":"用户名已存在"}');
 }else{
-    $insMyspl = "insert users values(null,'$name','$pass','$phone',NOW())";
+    $insMyspl = "insert users values(null,'$name','$phone','$pass',NOW())";
 
     $res = $conn->query($insMyspl);
     
