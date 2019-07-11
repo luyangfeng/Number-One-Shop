@@ -1,0 +1,1 @@
+"use strict";!function(){var o=$("#un"),n=$("#pwd"),t=$("#login_button");console.log(o.val()),t.on("click",function(){$.ajax({type:"post",url:"http://127.0.0.1:8080/Number-One-Shop/php/login.php",data:{username:o.val(),password:n.val()},dataType:"json",success:function(o){console.log(o)}})})}();

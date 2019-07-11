@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div class="regist_header clearfix">
+        <div class="wrap">
+            <a href="javascript:;" class="logo"><img src="https://passport.yhd.com/front-passport/passport/images/loginlogo.jpg" height="55" alt="1号店" /></a>
+            <div class="regist_header_right clearfix">
+                <!--<a href="#" class="english_edition" id="edition" style="display:none">English</a>-->
+                <div class="help_wrap">
+                    <a class="hd_menu" href="javascript:;><s class="help_ico"></s>帮助中心</a>
+                    <div class="hd_menu_list">
+                        <ul>
+                            <li><a href="javascript:;">包裹跟踪</a></li>
+                            <li><a href="javascript:;">常见问题</a></li>
+                            <li><a href="javascript:;">在线退换货</a></li>
+                            <li><a href="javascript:;">在线投诉</a></li>
+                            <!--
+                            <li><a href="http://www.yhd.com/deliveryinfo/deliveryInfo.do">配送范围</a></li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+                <span class="fr">您好，欢迎光临1号店！ <a href="login.html" class="blue_link">请登录</a></span>
+            </div>
+        </div>
+      </div>
+    <input type="hidden" id="validateSig" /> 
+    <input type="hidden" name="returnUrl" value="" id="returnUrl">
+    <input id="p" type="hidden" value=""/>
+    <input type="password" style="display:none">
+            <div class="y_regist_wrap">
+                <!--背景小图标 -->
+               <div class="y_regist_model">
+               
+                     <h4 class="y_regist_tit">1号店注册</h4>
+                     
+                     <div class="y_regist_form">
+                         <ul class="clearfix">
+                              <li>
+                                 <div class="y_same_item">
+                                     <input class="ysame_input" type="text" _input value="" id="userName" placeholder="用户名">
+                                     <span id="namereg" class="reg" style="position: absolute; top: 14px; right: -198px;"></span>
+                                 </div>
+    
+                                 <div class="y_regist_right"></div>
+                                 <!--提示信息end -->
+                             </li>
+                                                     
+                             <li>
+                                 <div class="y_same_item">
+                                     <input class="ysame_input" type="text" _input value="" id="phone" placeholder="手机号"/>
+                                     <span id="phonereg" class="reg" style="position: absolute; top: 14px; right: -198px;"></span>
+                                 </div>
+                                 <div class="y_regist_tips y_regist_tips_black">
+                                   <div class="y_regtip_rel"> 
+                                      <i></i>
+                                      <div class="y_tips_words">
+                                                  请填写正确的手机号码，以便 接收订单通知，找回密码等
+                                      </div>
+                                   </div> 
+                                 </div>
+    
+                                 <div class="y_regist_right"></div>
+                             </li>
+                             <li >
+                                 <div class="y_same_item">
+                                     <input id="pwd" class="ysame_input y_set_password" type="password" placeholder="设置密码"/>
+                                     <span id="passreg" class="reg" style="position: absolute; top: 14px; right: -198px;"></span>
+                                 </div>
+                                 <div class="y_regist_tips y_regist_tips_red">
+                                    <div class="y_regtip_rel"> 
+                                      <i></i>
+                                      <div class="y_tips_words">
+                                          6-20个大小
+                                      </div>
+                                    </div> 
+                                </div>
+                             <li>
+                                 <div class="y_agreement_word">点击注册，表示您同意1号店  <a href="javascript:;" target="_blank" >《服务协议及隐私声明》</a></div>
+                                 <button class="y_agreement_btn" id="register_button">同意协议并注册</button>
+                             </li>
+                         </ul>                 
+                     </div> <!-- // y_regist_form ending -->  
+               </div>
+           </div><!--// y_regist_wrap ending -->
+           <!--
+           <script type="text/javascript" src='https://captcha.yhd.com/statics/js/loader-min.js?9967.70991888742'></script>
+             -->
+    
+        <div id="simplefooter"><a href="javascript:;" target="_blank">沪ICP备16050468号</a>|<a>沪B2-20170039</a>|<a href="http://d7.yihaodianimg.com/N09/M07/BD/7B/ChEi11kJnKaAJQMrAAK-LnhML4o60600.jpg" data-ref="YHD_Footer_Licence" target="_blank">营业执照</a><p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved</p></div>  </body>
+    
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./script/registry.js"></script>
+</html>

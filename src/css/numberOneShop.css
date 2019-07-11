@@ -272,7 +272,7 @@ body {
     width: 100%;
 }
 .lunbo_ul {
-    width: 7600px;
+    /* width: 7600px; */
     height: 100%;
     position: absolute;
 }
