@@ -23,10 +23,10 @@
     }
 
     if(getcookie('cookiesid') && getcookie('cookienum')){
-		var s=getcookie('cookiesid').split(',');//数组sid
-		var n=getcookie('cookienum').split(',');//数组num
-		$.each(s,function(i,value){
-			showgoods(s[i],n[i]);
+		var sid=getcookie('cookiesid').split(',');//数组sid
+		var number=getcookie('cookienum').split(',');//数组num
+		$.each(sid,function(i,value){
+			showgoods(sid[i],number[i]);
 		});
 	}
     
